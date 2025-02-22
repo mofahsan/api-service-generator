@@ -1,0 +1,15 @@
+name: Triggered Workflow
+
+on:
+  repository_dispatch:
+    types: [trigger-pipeline]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run a sample command
+        run: echo "Workflow triggered remotely!"
