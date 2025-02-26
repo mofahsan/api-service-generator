@@ -90,7 +90,6 @@ jobs:
           echo "cloning submodule"
           git submodule update --init --recursive
           echo "submodule cloned"
-          EOF
 
       - name: Automation Api Server Deployment
         run: |
