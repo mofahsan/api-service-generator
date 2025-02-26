@@ -85,6 +85,13 @@ jobs:
           echo ".env and docker-compose.yml files found."
           EOF
 
+      - name : initiate submodule
+        run : |
+          echo "cloning submodule"
+          git submodule update --init --recursive
+          echo "submodule cloned"
+          EOF
+
       - name: Automation Api Server Deployment
         run: |
           echo "Deploying with Docker Compose"
