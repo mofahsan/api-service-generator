@@ -88,7 +88,9 @@ jobs:
       - name : initiate submodule
         run : |
           echo "cloning submodule"
+          ssh -i ./key.pem ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} <<EOF
           git submodule update --init --recursive
+          EOF
           echo "submodule cloned"
 
       - name: Automation Api Server Deployment
